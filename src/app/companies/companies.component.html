@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-primary" (click)="exportToExcel()">teste</button>
+  </div>
+</div>
+<div class="row" #epltable>
+  <table class="table table-striped table-dark">
+    <thead>
+    <tr class="bg-light">
+<!--      <th scope="col" style="background-image: url("../../assets/itau.png")"><img src="../../assets/itau.png" alt="teste" width="80" height="80"></th>-->
+      <th scope="col" style="background-image: url('../../assets/itau.png'); width: 80px; height: 80px;"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">CNPJ</th>
+      <th scope="col">Data de Abertura</th>
+      <th scope="col">Site</th>
+      <th scope="col">CEP</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let comp of companies; let i = index;">
+      <th scope="row">{{i+1}}</th>
+      <td>{{comp.nome}}</td>
+      <td>{{comp.cnpj}}</td>
+      <td>{{comp.abertura}}</td>
+      <td>{{comp.site}}</td>
+      <td>{{comp.cep}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
